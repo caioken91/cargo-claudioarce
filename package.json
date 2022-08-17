@@ -1,0 +1,25 @@
+{
+  "name": "cargo-claudioarce",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss scss/styless.scss styless/styless.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caioken91/cargo-claudio-arce.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caioken91/cargo-claudio-arce/issues"
+  },
+  "homepage": "https://github.com/caioken91/cargo-claudio-arce#readme",
+  "dependencies": {
+    "node-pty": "^0.10.1"
+  },
+  "devDependencies": {},
+  "description": ""
+}
