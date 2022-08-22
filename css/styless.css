@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap");
@@ -12,8 +13,8 @@ body {
 .contenedorGrilla {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(20% auto auto 300px);
-  grid-template-areas: "header" "aside" "main" "footer";
+  grid-template-rows: repeat(20% auto 300px);
+  grid-template-areas: "header" "main" "footer";
   margin: 0;
 }
 
@@ -36,8 +37,10 @@ header {
   justify-content: space-between;
   padding-right: 1em;
   padding-left: 1em;
+  height: 80px;
 }
 
+/*CONTENEDOR LOGO CARGO*/
 .cardLogo {
   margin-top: 10px;
   display: inline-flex;
@@ -52,7 +55,7 @@ header {
 }
 
 .buscador {
-  width: 150px;
+  width: 180px;
   padding: 10px;
   color: #FF2C55;
   font-weight: bolder;
@@ -68,38 +71,21 @@ header {
 
 /*ZONA HEADER INFERIOR*/
 .headerInf {
-  color: white;
-  height: 50px;
+  color: #FF2C55;
+  height: 80px;
+  z-index: 2;
+  border-bottom: solid 2px #FF2C55;
 }
 
-.contenedorMenuNav {
-  background-color: #34c85a;
-}
-
-header div label img {
-  width: 40px;
-  height: 40px;
+/*BARRA DE NAVEGACIÓN*/
+div label img {
+  width: 45px;
+  height: 45px;
   position: absolute;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 4px 4px 0px rgba(255, 44, 85, 0.37);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 8px;
+  border: solid 1px #FF2C55;
+  margin-left: 15px;
 }
 
-/*LO REEMPLAZO POR METODO BEM*/
-/*header div label img{
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1),rgba(255,255,255,0));
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 4px 4px 0px rgba(255, 44, 85, 0.37);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 8px;
-}*/
 .checkBtnNav {
   cursor: pointer;
 }
@@ -108,8 +94,12 @@ header div label img {
   display: none;
 }
 
+#btnNav:checked ~ ul {
+  display: block;
+}
+
 header div nav ul {
-  top: 130px;
+  top: 160px;
   position: absolute;
   display: none;
   width: 100%;
@@ -130,45 +120,6 @@ header div nav ul li a {
   text-decoration: none;
   padding: 6px;
 }
-header div nav ul li a:hover {
-  background-color: #34c85a;
-}
-
-/* REEMPLAZO POR METODO BEM*/
-/*
-header div nav ul{
-    top: 130px;
-    position:absolute;
-    display: none;
-    width: 100%;
-    height: 100vh;
-    background: black;
-    list-style: none;
-    text-decoration: none;
-    text-align: center;
-    z-index: 11;
-}
-
-header nav ul li{
-    margin: 50px 0;
-    line-height: 30px;
-}
-
-header nav ul li a{
-    color:#FF2C55;
-    font-size: 20px;
-    text-decoration: none;
-    border-top: outset 2px #FF2C55;
-    border-bottom: outset 2px #FF2C55;
-    border-left: outset 2px #FF2C55;
-    border-right: outset 2px #FF2C55;
-    padding: 6px;
-}
-
-*/
-#btnNav:checked ~ ul {
-  display: block;
-}
 
 /*ZONA CUERPO*/
 main {
@@ -179,70 +130,37 @@ main {
   color: #FF2C55;
 }
 
-/*ANIMACION CAROUSEL*/
+.mainSup {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "parteA" "parteB";
+}
+
 .cajaCarousel {
-  width: auto;
-  height: 250px;
-  margin-top: 10px;
-  margin-bottom: 150px;
+  grid-area: parteA;
 }
 
-.slides {
-  text-align: center;
-  height: 200px;
-  width: 375px;
-  overflow: hidden;
+.infoAdd {
   display: flex;
+  display: inline-block;
+  grid-area: parteB;
+  background: #0E0F26;
+  text-align: left;
+  max-width: 100%;
 }
 
-.slides::after {
-  content: "";
-  position: static;
-  inset: 0;
-  z-index: 10;
+.infoAdd ul li {
+  padding: 10px;
+  list-style: none;
 }
 
-.slide {
-  margin-top: 150px;
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  animation: cycle 12s infinite;
+.infoAdd ul li a {
+  color: #FFFCFF;
+  text-decoration: none;
+  font-size: 15px;
 }
 
-.slide-2 {
-  animation-delay: 4s;
-}
-
-.slide-3 {
-  animation-delay: 8s;
-}
-
-.slide-image {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-
-@keyframes cycle {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  20% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  30% {
-    opacity: 0;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-  }
-}
+/*ANIMACION CAROUSEL*/
 .caja {
   max-width: 400px;
   margin-left: auto;
@@ -251,8 +169,11 @@ main {
   color: #FF2C55;
 }
 
+/*FORMULARIO DE CONTACTO, ES UN GRID*/
 .contacWrapper {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "form" "info";
 }
 
 .contacWrapper > * {
@@ -269,29 +190,70 @@ main {
   padding: 1em;
 }
 
-.menuFormulario form input,
-.menuFormulario form textarea,
-.menuFormulario form option {
-  width: 100%;
-  padding: 0.7em;
-  border: none;
-  outline: 0;
-  border-bottom: 1px solid #FF2C55;
+.inputForm {
+  max-width: 100%;
 }
 
-.menuFormulario-boton {
-  background: #007AFF;
+.contacForm {
+  grid-area: form;
+  display: flex;
 }
 
 .infoContacto {
+  grid-area: info;
   background: #000;
   text-align: left;
+  width: 300px;
+  display: inline-block;
 }
 
 .infoContacto li {
   list-style: none;
 }
 
+/*FORMULARIO DE CONTACTO, ES UN GRID----CIERRE*/
+/*GRID DEL MAIN SUPERIOR*/
+.cajaGrilla {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "cajaA" "cajaB";
+}
+
+.tituloDos {
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+  color: #34c85a;
+}
+
+.cajaPpal {
+  grid-area: cajaA;
+  max-width: 400px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 2px #34c85a;
+}
+
+.cajaPpal img {
+  max-width: 400px;
+  border: solid 2px #34c85a;
+}
+
+.cajaDesc {
+  border: solid 2px #34c85a;
+  grid-area: cajaB;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cajaDesc h3 {
+  color: #34c85a;
+  font-size: medium;
+}
+
+/*GRID DEL MAIN SUPERIOR, CIERRE*/
 .tarjetaOpc {
   width: 200px;
   height: 250px;
@@ -352,13 +314,6 @@ main {
   border-top: solid 2px #34c85a;
 }
 
-.tituloDos {
-  text-align: center;
-  font-size: x-large;
-  font-weight: bold;
-  color: #34c85a;
-}
-
 .tituloTres {
   text-align: center;
   font-size: x-large;
@@ -369,18 +324,6 @@ main {
 .inputForm {
   padding: 8px;
   margin: 4px;
-}
-
-.fondoTit {
-  width: auto;
-  height: 500px;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.fondoTit > img {
-  width: 100%;
-  height: 300px;
 }
 
 .cajaTextoGr {
@@ -402,7 +345,6 @@ main {
 
 /*ZONA FOOTER*/
 footer {
-  margin-top: 20px;
   grid-area: footer;
   background-color: black;
   text-align: center;
@@ -452,7 +394,6 @@ footer ul li {
   .contenedorGrilla {
     margin: 0;
   }
-  /*FOOTER*/
   .cardLogo {
     margin-top: 15px;
     font-size: medium;
@@ -467,17 +408,21 @@ footer ul li {
     font-weight: bolder;
     font-size: medium;
   }
-  header div label img {
-    display: none;
+  .headerInf {
+    color: #FF2C55;
+    height: 80px;
+    z-index: 0;
+    margin-left: 50px;
+    margin-right: 50px;
   }
-  main {
-    margin-right: 200px;
-    margin-left: 200px;
+  .headerSup {
+    margin-left: 50px;
+    margin-right: 50px;
   }
   /*MENU*/
   header div nav ul {
-    top: 50px;
-    position: absolute;
+    top: 0px;
+    position: static;
     display: flex;
     justify-content: flex-end;
     background: black;
@@ -485,48 +430,88 @@ footer ul li {
     text-decoration: none;
     text-align: center;
     height: 20px;
-    width: 100%;
     right: 10px;
   }
-  header nav ul li {
+  header div nav ul li {
+    top: 0px;
     margin: 0px;
     line-height: 0px;
+    z-index: 3;
   }
-  header nav ul li a {
+  header div nav ul li a {
     color: #FF2C55;
     font-size: 25px;
     font-weight: bold;
     text-decoration: none;
     padding: 10px;
     border: none;
-    margin: 10px;
     top: 0px;
+    z-index: 3;
+  }
+  header div label img {
+    display: none;
   }
   /*MENU*/
+  main {
+    display: inline-block;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 20px;
+  }
+  .mainSup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "parteA parteB";
+  }
+  .infoAdd ul li {
+    padding: 5px;
+  }
+  .infoAdd ul li a {
+    font-size: 20px;
+  }
   /*SLIDER*/
   .cajaCarousel {
-    width: auto;
-    height: 400px;
-    margin-top: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 10px;
-  }
-  .slides {
-    height: 200px;
-    width: 375px;
-    overflow: hidden;
-    display: flex;
-  }
-  .slide-image {
-    margin-top: 50px;
-    height: 400px;
-    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50rem;
   }
   /*SLIDER*/
   .contacWrapper {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "form info";
+  }
+  .infoContacto {
+    margin-top: 50px;
+  }
+  .cajaGrilla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "cajaA cajaB";
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+  .tituloDos {
+    max-width: 600px;
+  }
+  .cajaPpal {
+    grid-area: cajaA;
+    max-width: 600px;
+    display: inline-block;
+    margin-right: 0;
+  }
+  .cajaPpal img {
+    max-width: 600px;
+    border: solid 2px #34c85a;
+  }
+  .cajaDesc {
+    text-align: left;
+    margin-left: 0;
+    padding: 1em;
+    max-width: 600px;
+  }
+  .cajaDesc h3 {
+    font-size: large;
   }
   .fondoTit {
     width: auto;
@@ -540,13 +525,10 @@ footer ul li {
   }
   .tituloDos {
     text-align: center;
-    font-size: 70px;
+    font-size: 50px;
     font-weight: bold;
     color: #34c85a;
-    position: absolute;
     width: 500px;
-    left: 50%;
-    margin-left: -250px;
     top: 200px;
   }
   .tituloTres {
@@ -556,10 +538,13 @@ footer ul li {
   }
   .tarjetaOpc {
     width: 300px;
-    height: 300px;
+    height: 350px;
+    margin: 20px;
   }
   .tarjetaTit {
     font-size: large;
+    margin: 10px;
+    height: 80px;
   }
   .tarjetaImg {
     width: 300px;
@@ -580,7 +565,13 @@ footer ul li {
     display: flex;
     justify-items: center;
     padding: 10px;
-    height: 140px;
+    height: 170px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .footerInf {
+    margin-left: 50px;
+    margin-right: 50px;
   }
   .tarjetaFooterTit {
     font-size: 15px;

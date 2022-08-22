@@ -7,9 +7,14 @@ body{
     background-color: black;
 }
 
+
+
+
 /*PALETA DE COLORES*/
 $rojoesp:#FF2C55;
 $verdeesp:#34c85a;
+$grisesp:#0E0F26;
+$blancoesp:#FFFCFF;
 
 
 
@@ -18,10 +23,9 @@ $verdeesp:#34c85a;
 .contenedorGrilla{
     display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(20% auto auto 300px);
+        grid-template-rows: repeat(20% auto 300px);
         grid-template-areas: 
             "header"
-            "aside"
             "main"
             "footer"
         ;
@@ -50,9 +54,10 @@ header{
     justify-content:space-between;
     padding-right: 1em;
     padding-left: 1em;
+    height: 80px;
     
 }
-
+/*CONTENEDOR LOGO CARGO*/
 .cardLogo{
     margin-top: 10px;
     display: inline-flex;
@@ -67,7 +72,7 @@ header{
 }
 
 .buscador{
-    width: 150px;
+    width: 180px;
     padding: 10px;
     color:$rojoesp;
     font-weight: bolder;
@@ -86,44 +91,25 @@ header{
 /*ZONA HEADER INFERIOR*/
 
 .headerInf{
-    color: white;
-    height: 50px;
-    
-}
-.contenedorMenuNav{
-    background-color: $verdeesp;
+    color: $rojoesp;
+    height: 80px;
+    z-index: 2;
+    border-bottom: solid 2px $rojoesp;
 }
 
-header{
-    div{
-        label{
-            img{
-                width: 40px;
-                height: 40px;
-                position: absolute;
-                background: linear-gradient(135deg, rgba(255,255,255,0.1),rgba(255,255,255,0));
-                -webkit-backdrop-filter: blur(20px);
-                backdrop-filter: blur(20px);
-                box-shadow: 0 4px 4px 0px rgba(255, 44, 85, 0.37);
-                border: 1px solid rgba(255, 255, 255, 0.18);
-                border-radius: 8px;
-            }
+/*BARRA DE NAVEGACIÓN*/
+
+div{
+    label{
+        img{
+            width: 45px;
+            height: 45px;
+            position: absolute;
+            border: solid 1px $rojoesp;
+            margin-left: 15px;
         }
     }
 }
-
-/*LO REEMPLAZO POR METODO BEM*/
-/*header div label img{
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1),rgba(255,255,255,0));
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 4px 4px 0px rgba(255, 44, 85, 0.37);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 8px;
-}*/
 
 .checkBtnNav{
     cursor: pointer;
@@ -132,12 +118,15 @@ header{
 #btnNav{
     display: none;
 }
+#btnNav:checked ~ ul{
+    display: block;
+}
 
 header{
     div{
         nav{
             ul{
-                top: 130px;
+                top: 160px;
                 position:absolute;
                 display: none;
                 width: 100%;
@@ -155,10 +144,6 @@ header{
                         font-size: 20px;
                         text-decoration: none;
                         padding: 6px;
-
-                        &:hover{
-                            background-color: $verdeesp;
-                        }
                     }
                 }
             }
@@ -166,48 +151,7 @@ header{
     }
 }
 
-
-
-
-/* REEMPLAZO POR METODO BEM*/
-/*
-header div nav ul{
-    top: 130px;
-    position:absolute;
-    display: none;
-    width: 100%;
-    height: 100vh;
-    background: black;
-    list-style: none;
-    text-decoration: none;
-    text-align: center;
-    z-index: 11;
-}
-
-header nav ul li{
-    margin: 50px 0;
-    line-height: 30px;
-}
-
-header nav ul li a{
-    color:#FF2C55;
-    font-size: 20px;
-    text-decoration: none;
-    border-top: outset 2px #FF2C55;
-    border-bottom: outset 2px #FF2C55;
-    border-left: outset 2px #FF2C55;
-    border-right: outset 2px #FF2C55;
-    padding: 6px;
-}
-
-*/
-
-#btnNav:checked ~ ul{
-    display: block;
-}
-
 /*ZONA CUERPO*/
-
 
 main{
     grid-area: main;
@@ -217,61 +161,40 @@ main{
     color: $rojoesp;
 }
 
-/*ANIMACION CAROUSEL*/
+.mainSup{
+    display: grid;
+    grid-template-columns: 1fr;
+        grid-template-areas: 
+            "parteA"
+            "parteB"
+        ;
+}
 
 .cajaCarousel{
-    width: auto;
-    height: 250px;
-    margin-top: 10px;
-    margin-bottom: 150px;
+    grid-area: parteA;
 }
 
-.slides{
-    text-align: center;
-    height: 200px;
-    width: 375px;
-    overflow: hidden;
+.infoAdd{
     display: flex;
+    display: inline-block;
+    grid-area: parteB;
+    background: $grisesp;
+    text-align: left;
+    max-width: 100%;
 }
 
-.slides::after{
-    content: '';
-    position:static;
-    inset: 0;
-    z-index: 10;
+.infoAdd ul li{
+    padding: 10px;
+    list-style: none;
 }
 
-.slide {
-    margin-top: 150px;
-    position:absolute;
-    inset: 0;
-    opacity: 0;
-    animation: cycle 12s infinite;
+.infoAdd ul li a{
+    color: $blancoesp;
+    text-decoration: none;
+    font-size: 15px;
 }
 
-.slide-2{
-    animation-delay: 4s;
-}
-
-.slide-3{
-    animation-delay: 8s;
-}
-
-.slide-image{
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-@keyframes cycle {
-    0% {opacity: 0;}
-    10% {opacity: 1;}
-    20% {opacity: 1; transform: scale(1.00);}
-    30% {opacity: 0; transform: scale(1.00);}
-    100% {opacity: 0}
-}
-
-
+/*ANIMACION CAROUSEL*/
 
 .caja{
     max-width: 400px;
@@ -281,8 +204,15 @@ main{
     color: $rojoesp;
 }
 
+/*FORMULARIO DE CONTACTO, ES UN GRID*/
+
 .contacWrapper{
-    box-shadow:0 0 20px rgba(255, 255, 255, .3);
+    display: grid;
+    grid-template-columns: 1fr;
+        grid-template-areas: 
+            "form"
+            "info"
+        ;
 }
 
 .contacWrapper > * {
@@ -294,41 +224,87 @@ main{
     max-width: 300px;
 }
 
-
 .menuFormulario form p{
     margin:0;
     padding: 1em;
 }
 
-.menuFormulario form input,
-.menuFormulario form textarea,
-.menuFormulario form option{
-    width: 100%;
-    padding: .7em;
-    border: none;
-    outline: 0;
-    border-bottom: 1px solid $rojoesp;
+.inputForm{
+    max-width: 100%;
 }
 
-.menuFormulario-boton{
-    background: #007AFF;
-
+.contacForm{
+    grid-area: form;
+    display: flex;
 }
 
 .infoContacto{
+    grid-area: info;
     background: #000;
     text-align: left;
+    width: 300px;
+    display: inline-block;
 }
 
 .infoContacto li{
     list-style: none;
 }
 
+/*FORMULARIO DE CONTACTO, ES UN GRID----CIERRE*/
+
+/*GRID DEL MAIN SUPERIOR*/
+
+.cajaGrilla{
+    display: grid;
+    grid-template-columns: 1fr;
+        grid-template-areas: 
+            "cajaA"
+            "cajaB"
+        ;
+   
+}
+
+.tituloDos{
+    text-align: center;
+    font-size:x-large;
+    font-weight: bold;
+    color:$verdeesp;
+    
+}
+
+.cajaPpal{
+    grid-area: cajaA;
+    max-width: 400px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 2px $verdeesp;
+}
+
+.cajaPpal img{
+    max-width: 400px;
+    border: solid 2px $verdeesp;
+}
+
+.cajaDesc{
+    border: solid 2px $verdeesp;
+    grid-area: cajaB;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cajaDesc h3{
+    color: $verdeesp;
+    font-size: medium;
+}
+
+/*GRID DEL MAIN SUPERIOR, CIERRE*/
+
 @mixin sizes ($width, $height){
     width: $width;
     height: $height;
 }
-
 
 .tarjetaOpc{
     @include sizes(200px,250px);
@@ -346,7 +322,6 @@ main{
     margin: 5px;
 }
 
-
 /*NO PUEDO HACER ANDAR EL MAPA*/
 
 $tarjetastitulos:(
@@ -358,14 +333,11 @@ $tarjetastitulos:(
     t6:#AF52DE
     );
 
-
 @each $opc, $color in $tarjetastitulos {
     .tarjetaOpc--#{$opc} {
         color:$color;
-    }
-    
+    }    
 }
-
 
 .tarjetaTit{
     font-size: medium;
@@ -379,23 +351,12 @@ $tarjetastitulos:(
     height: 100px;
 }
 
-
 .tarjetaDesc{
     color: $verdeesp;
     font-size: small;
     text-align: center;
     height: 50px;
     border-top: solid 2px $verdeesp;
-}
-
-
-
-
-.tituloDos{
-    text-align: center;
-    font-size:x-large;
-    font-weight: bold;
-    color:$verdeesp;
 }
 
 .tituloTres{
@@ -409,19 +370,6 @@ $tarjetastitulos:(
     padding: 8px;
     margin: 4px;
 }
-
-.fondoTit{
-    width: auto;
-    height: 500px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.fondoTit > img{
-    width: 100%;
-    height: 300px;
-}
-
 
 .cajaTextoGr{
     width: auto;
@@ -442,9 +390,7 @@ $tarjetastitulos:(
 
 /*ZONA FOOTER*/
 
-
 footer{
-    margin-top: 20px;
     grid-area:footer;
     background-color: black;
     text-align: center;
@@ -495,14 +441,12 @@ footer ul li{
 
 @media (min-width:1024px) {
 
+
     
     .contenedorGrilla{
         margin: 0;
     }
 
-    /*FOOTER*/
-    
-    
     .cardLogo{
         margin-top: 15px;
         font-size: medium;
@@ -519,80 +463,147 @@ footer ul li{
         font-weight: bolder;
         font-size: medium;
         }
+    
+    .headerInf{
+        color: $rojoesp;
+        height: 80px;
+        z-index: 0;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .headerSup{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    /*MENU*/
+
+    header{
+        div{
+            nav{
+                ul{
+                    top:0px;
+                    position:static;
+                    display:flex;
+                    justify-content:flex-end;
+                    background: black;
+                    list-style: none;
+                    text-decoration: none;
+                    text-align: center;
+                    height:20px;
+                    right: 10px;
+                    li{
+                        top: 0px;
+                        margin: 0px;
+                        line-height: 0px;
+                        z-index: 3;
+                        a{
+                            color:$rojoesp;
+                            font-size:25px;
+                            font-weight: bold;
+                            text-decoration: none;
+                            padding:10px;
+                            border:none;
+                            top: 0px;
+                            z-index: 3;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
 
     header div label img{
         display: none;
     }
+   
 
+    /*MENU*/
 
     main {
-        margin-right: 200px;
+        display: inline-block;
         margin-left: 200px;
+        margin-right: 200px;
+        margin-top: 20px;
     }
 
-    /*MENU*/
+    .mainSup{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+                "parteA parteB"  
+            ;
+    }
 
-    header div nav ul{
-        top:50px;
-        position:absolute;
-        display:flex;
-        justify-content:flex-end;
-        background: black;
-        list-style: none;
-        text-decoration: none;
-        text-align: center;
-        height:20px;
-        width: 100%;
-        right: 10px;
+    .infoAdd ul li{
+        padding: 5px;
     }
     
-    header nav ul li{
-        margin: 0px;
-        line-height: 0px;
+    .infoAdd ul li a{
+        font-size: 20px;
     }
-    
-    header nav ul li a{
-        color:$rojoesp;
-        font-size:25px;
-        font-weight: bold;
-        text-decoration: none;
-        padding:10px;
-        border:none;
-        margin:10px;
-        top: 0px;
-    }
-
-    /*MENU*/
 
     /*SLIDER*/
-
     .cajaCarousel{
-        width: auto;
-        height: 400px;
-        margin-top: 50px;
-        margin-left: 50px;
-        margin-right: 50px;
-        margin-bottom: 10px;
-    }
-    
-    .slides{
-        height: 200px;
-        width: 375px;
-        overflow: hidden;
-        display: flex;
-    }
-    
-    .slide-image{
-        margin-top: 50px;
-        height: 400px;
-        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 50rem;
     }
 
     /*SLIDER*/
 
     .contacWrapper{
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+                "form info"
+            ;
+    }
+
+    .infoContacto{
+        margin-top: 50px;
+    }
+
+
+    .cajaGrilla{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+                "cajaA cajaB"
+            ;
+
+        margin-top: 40px;    
+        margin-bottom: 50px;
+    }
+
+    .tituloDos{
+        max-width: 600px;
+    }
+    
+    .cajaPpal{
+        grid-area: cajaA;
+        max-width: 600px;
+        display: inline-block;
+        margin-right: 0;
+    }
+    
+    .cajaPpal img{
+        max-width: 600px;
+        border: solid 2px $verdeesp;
+    }
+    
+    .cajaDesc{
+        text-align: left;
+        margin-left: 0;
+        padding: 1em;
+        max-width: 600px;
+    }
+    
+    .cajaDesc h3{
+        font-size: large;
     }
 
     .fondoTit{
@@ -610,13 +621,10 @@ footer ul li{
 
     .tituloDos{
         text-align: center;
-        font-size:70px;
+        font-size:50px;
         font-weight: bold;
         color:$verdeesp;
-        position:absolute;
         width: 500px;
-        left: 50%;
-        margin-left: -250px;
         top: 200px;
     }
 
@@ -628,11 +636,14 @@ footer ul li{
 
     .tarjetaOpc{
         width: 300px;
-        height: 300px;
+        height: 350px;
+        margin: 20px;
     }
 
     .tarjetaTit{
         font-size:large;
+        margin: 10px;
+        height: 80px;
     }
     
     .tarjetaImg{
@@ -660,8 +671,16 @@ footer ul li{
         display:flex;
         justify-items: center;
         padding: 10px;
-        height: 140px;
+        height: 170px;
+        margin-left: 50px;
+        margin-right: 50px;
     }
+
+    .footerInf{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
 
     .tarjetaFooterTit{
         font-size: 15px;
