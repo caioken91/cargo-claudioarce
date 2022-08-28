@@ -1,0 +1,27 @@
+/*MEDIA PARA 481*/
+
+@media (min-width:481px){
+
+
+    /*ZONA MAIN*/
+
+    .cajaPpal{
+        grid-area: cajaA;
+        max-width: 480px;
+        display: inline-block;
+    }
+    
+    .cajaPpal img{
+        max-width: 478px;
+    }
+    
+    .cajaDesc{
+        padding: 1em;
+        max-width: 480px;
+    }
+    
+    .cajaDesc h3{
+        font-size: large;
+    }
+
+}

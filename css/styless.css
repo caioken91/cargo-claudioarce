@@ -1,14 +1,11 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap"); /*PALETA DE COLORES*/
 body {
   margin: 0;
   font-family: "Orbitron", sans-serif;
   background-color: black;
 }
 
-/*PALETA DE COLORES*/
 /*GRILLA*/
 .contenedorGrilla {
   display: grid;
@@ -55,7 +52,7 @@ header {
 }
 
 .buscador {
-  width: 180px;
+  width: 170px;
   padding: 10px;
   color: #FF2C55;
   font-weight: bolder;
@@ -165,7 +162,7 @@ main {
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
-  padding: 1.5em;
+  padding: 1em;
   color: #FF2C55;
 }
 
@@ -203,7 +200,7 @@ main {
   grid-area: info;
   background: #000;
   text-align: left;
-  width: 300px;
+  max-width: 300px;
   display: inline-block;
 }
 
@@ -214,9 +211,12 @@ main {
 /*FORMULARIO DE CONTACTO, ES UN GRID----CIERRE*/
 /*GRID DEL MAIN SUPERIOR*/
 .cajaGrilla {
+  margin-top: 10px;
+  margin-bottom: 10px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: "cajaA" "cajaB";
+  place-items: center;
 }
 
 .tituloDos {
@@ -228,7 +228,7 @@ main {
 
 .cajaPpal {
   grid-area: cajaA;
-  max-width: 400px;
+  max-width: 370px;
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
@@ -236,16 +236,17 @@ main {
 }
 
 .cajaPpal img {
-  max-width: 400px;
+  max-width: 368px;
   border: solid 2px #34c85a;
 }
 
 .cajaDesc {
   border: solid 2px #34c85a;
   grid-area: cajaB;
-  max-width: 400px;
+  max-width: 370px;
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
 }
 
 .cajaDesc h3 {
@@ -267,31 +268,6 @@ main {
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 20px;
   margin: 5px;
-}
-
-/*NO PUEDO HACER ANDAR EL MAPA*/
-.tarjetaOpc--t1 {
-  color: #FF3830;
-}
-
-.tarjetaOpc--t2 {
-  color: #FFCC00;
-}
-
-.tarjetaOpc--t3 {
-  color: #FF9501;
-}
-
-.tarjetaOpc--t4 {
-  color: #5AC8FB;
-}
-
-.tarjetaOpc--t5 {
-  color: #007AFF;
-}
-
-.tarjetaOpc--t6 {
-  color: #AF52DE;
 }
 
 .tarjetaTit {
@@ -389,11 +365,27 @@ footer ul li {
   display: inline-block;
 }
 
-/*MEDIA PARA 1024*/
-@media (min-width: 1024px) {
-  .contenedorGrilla {
-    margin: 0;
+/*MEDIA PARA 481*/
+@media (min-width: 481px) {
+  /*ZONA MAIN*/
+  .cajaPpal {
+    grid-area: cajaA;
+    max-width: 480px;
+    display: inline-block;
   }
+  .cajaPpal img {
+    max-width: 478px;
+  }
+  .cajaDesc {
+    padding: 1em;
+    max-width: 480px;
+  }
+  .cajaDesc h3 {
+    font-size: large;
+  }
+}
+/*MEDIA PARA 769*/
+@media (min-width: 769px) {
   .cardLogo {
     margin-top: 15px;
     font-size: medium;
@@ -403,21 +395,10 @@ footer ul li {
     height: 45px;
   }
   .buscador {
-    width: 300px;
+    width: 250px;
     padding: 10px;
     font-weight: bolder;
     font-size: medium;
-  }
-  .headerInf {
-    color: #FF2C55;
-    height: 80px;
-    z-index: 0;
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-  .headerSup {
-    margin-left: 50px;
-    margin-right: 50px;
   }
   /*MENU*/
   header div nav ul {
@@ -440,7 +421,7 @@ footer ul li {
   }
   header div nav ul li a {
     color: #FF2C55;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     text-decoration: none;
     padding: 10px;
@@ -452,30 +433,99 @@ footer ul li {
     display: none;
   }
   /*MENU*/
-  main {
-    display: inline-block;
-    margin-left: 200px;
-    margin-right: 200px;
-    margin-top: 20px;
-  }
-  .mainSup {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "parteA parteB";
+  .infoAdd {
+    width: 769px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .infoAdd ul li {
-    padding: 5px;
+    padding: 25px;
   }
   .infoAdd ul li a {
-    font-size: 20px;
+    font-size: 25px;
   }
   /*SLIDER*/
   .cajaCarousel {
     margin-left: auto;
     margin-right: auto;
-    max-width: 50rem;
+    max-width: 769px;
   }
-  /*SLIDER*/
+  .cajaPpal {
+    max-width: 768px;
+  }
+  .cajaPpal img {
+    max-width: 766px;
+    border: solid 2px #34c85a;
+  }
+  .cajaDesc {
+    max-width: 768px;
+  }
+  .cajaDesc h3 {
+    font-size: large;
+  }
+  .tituloDos {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: #34c85a;
+  }
+  .tituloTres {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .imgWhatsapp {
+    margin: 0;
+  }
+  .imgWhatsapp img {
+    width: 60px;
+    height: 60px;
+  }
+  /*FOOTER*/
+  .footerSup {
+    display: flex;
+    justify-items: center;
+    padding: 10px;
+    height: 170px;
+  }
+  .tarjetaFooterTit {
+    font-size: 15px;
+  }
+  .tarjetaFooterDes {
+    font-size: small;
+  }
+  .tarjetaFooter {
+    height: 130px;
+  }
+  .imgFooter {
+    height: 45px;
+    width: 45px;
+  }
+  /*FOOTER*/
+}
+/*MEDIA PARA 1025*/
+@media (min-width: 1025px) {
+  .buscador {
+    width: 300px;
+  }
+  .headerInf {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .headerSup {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  /*MENU*/
+  header div nav ul li a {
+    font-size: 25px;
+  }
+  /*MENU*/
+  main {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 30px;
+  }
   .contacWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -491,9 +541,6 @@ footer ul li {
     margin-top: 40px;
     margin-bottom: 50px;
   }
-  .tituloDos {
-    max-width: 600px;
-  }
   .cajaPpal {
     grid-area: cajaA;
     max-width: 600px;
@@ -501,13 +548,15 @@ footer ul li {
     margin-right: 0;
   }
   .cajaPpal img {
-    max-width: 600px;
+    max-width: 558px;
     border: solid 2px #34c85a;
   }
   .cajaDesc {
+    grid-area: cajaB;
     text-align: left;
     margin-left: 0;
     padding: 1em;
+    height: 100%;
     max-width: 600px;
   }
   .cajaDesc h3 {
@@ -518,18 +567,6 @@ footer ul li {
     height: 300px;
     text-align: center;
     margin-bottom: 110px;
-  }
-  .fondoTit > img {
-    width: 100%;
-    height: 400px;
-  }
-  .tituloDos {
-    text-align: center;
-    font-size: 50px;
-    font-weight: bold;
-    color: #34c85a;
-    width: 500px;
-    top: 200px;
   }
   .tituloTres {
     text-align: center;
@@ -552,13 +589,6 @@ footer ul li {
   }
   .tarjetaDesc {
     font-size: medium;
-  }
-  .imgWhatsapp {
-    margin: 0;
-  }
-  .imgWhatsapp img {
-    width: 60px;
-    height: 60px;
   }
   /*FOOTER*/
   .footerSup {
@@ -588,7 +618,5 @@ footer ul li {
   }
   /*FOOTER*/
 }
-/*PARA ENTREGA DE SASS VARIABLES*/
-/*PARA ENTREGA DE SASS VARIABLES*/
 
 /*# sourceMappingURL=styless.css.map */

@@ -1,21 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+@import 'vars';
+
 body{
     margin: 0;
     font-family: 'Orbitron', sans-serif;
     background-color: black;
 }
-
-
-
-
-/*PALETA DE COLORES*/
-$rojoesp:#FF2C55;
-$verdeesp:#34c85a;
-$grisesp:#0E0F26;
-$blancoesp:#FFFCFF;
-
 
 
 /*GRILLA*/
@@ -72,7 +63,7 @@ header{
 }
 
 .buscador{
-    width: 180px;
+    width: 170px;
     padding: 10px;
     color:$rojoesp;
     font-weight: bolder;
@@ -200,7 +191,7 @@ main{
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
-    padding: 1.5em;
+    padding: 1em;
     color: $rojoesp;
 }
 
@@ -242,7 +233,7 @@ main{
     grid-area: info;
     background: #000;
     text-align: left;
-    width: 300px;
+    max-width: 300px;
     display: inline-block;
 }
 
@@ -255,13 +246,15 @@ main{
 /*GRID DEL MAIN SUPERIOR*/
 
 .cajaGrilla{
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: grid;
     grid-template-columns: 1fr;
         grid-template-areas: 
             "cajaA"
             "cajaB"
         ;
-   
+    place-items: center;    
 }
 
 .tituloDos{
@@ -269,12 +262,11 @@ main{
     font-size:x-large;
     font-weight: bold;
     color:$verdeesp;
-    
 }
 
 .cajaPpal{
     grid-area: cajaA;
-    max-width: 400px;
+    max-width: 370px;
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
@@ -282,16 +274,17 @@ main{
 }
 
 .cajaPpal img{
-    max-width: 400px;
+    max-width: 368px;
     border: solid 2px $verdeesp;
 }
 
 .cajaDesc{
     border: solid 2px $verdeesp;
     grid-area: cajaB;
-    max-width: 400px;
+    max-width: 370px;
     margin-left: auto;
     margin-right: auto;
+    text-align: left;
 }
 
 .cajaDesc h3{
@@ -320,23 +313,6 @@ main{
     border-radius: 20px;
 
     margin: 5px;
-}
-
-/*NO PUEDO HACER ANDAR EL MAPA*/
-
-$tarjetastitulos:(
-    t1:#FF3830,
-    t2:#FFCC00,
-    t3:#FF9501,
-    t4:#5AC8FB,
-    t5:#007AFF,
-    t6:#AF52DE
-    );
-
-@each $opc, $color in $tarjetastitulos {
-    .tarjetaOpc--#{$opc} {
-        color:$color;
-    }    
 }
 
 .tarjetaTit{
@@ -437,282 +413,7 @@ footer ul li{
     display: inline-block;
 }
 
-/*MEDIA PARA 1024*/
-
-@media (min-width:1024px) {
-
-
-    
-    .contenedorGrilla{
-        margin: 0;
-    }
-
-    .cardLogo{
-        margin-top: 15px;
-        font-size: medium;
-    }
-
-    .logo{
-        width: 45px;
-        height: 45px;
-    }
-
-    .buscador{
-        width: 300px;
-        padding: 10px;
-        font-weight: bolder;
-        font-size: medium;
-        }
-    
-    .headerInf{
-        color: $rojoesp;
-        height: 80px;
-        z-index: 0;
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-
-    .headerSup{
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-
-    /*MENU*/
-
-    header{
-        div{
-            nav{
-                ul{
-                    top:0px;
-                    position:static;
-                    display:flex;
-                    justify-content:flex-end;
-                    background: black;
-                    list-style: none;
-                    text-decoration: none;
-                    text-align: center;
-                    height:20px;
-                    right: 10px;
-                    li{
-                        top: 0px;
-                        margin: 0px;
-                        line-height: 0px;
-                        z-index: 3;
-                        a{
-                            color:$rojoesp;
-                            font-size:25px;
-                            font-weight: bold;
-                            text-decoration: none;
-                            padding:10px;
-                            border:none;
-                            top: 0px;
-                            z-index: 3;
-
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-
-    header div label img{
-        display: none;
-    }
-   
-
-    /*MENU*/
-
-    main {
-        display: inline-block;
-        margin-left: 200px;
-        margin-right: 200px;
-        margin-top: 20px;
-    }
-
-    .mainSup{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-            grid-template-areas: 
-                "parteA parteB"  
-            ;
-    }
-
-    .infoAdd ul li{
-        padding: 5px;
-    }
-    
-    .infoAdd ul li a{
-        font-size: 20px;
-    }
-
-    /*SLIDER*/
-    .cajaCarousel{
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 50rem;
-    }
-
-    /*SLIDER*/
-
-    .contacWrapper{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-            grid-template-areas: 
-                "form info"
-            ;
-    }
-
-    .infoContacto{
-        margin-top: 50px;
-    }
-
-
-    .cajaGrilla{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-            grid-template-areas: 
-                "cajaA cajaB"
-            ;
-
-        margin-top: 40px;    
-        margin-bottom: 50px;
-    }
-
-    .tituloDos{
-        max-width: 600px;
-    }
-    
-    .cajaPpal{
-        grid-area: cajaA;
-        max-width: 600px;
-        display: inline-block;
-        margin-right: 0;
-    }
-    
-    .cajaPpal img{
-        max-width: 600px;
-        border: solid 2px $verdeesp;
-    }
-    
-    .cajaDesc{
-        text-align: left;
-        margin-left: 0;
-        padding: 1em;
-        max-width: 600px;
-    }
-    
-    .cajaDesc h3{
-        font-size: large;
-    }
-
-    .fondoTit{
-        width: auto;
-        height: 300px;
-        text-align: center;
-        margin-bottom: 110px;
-    }
-    
-    .fondoTit > img{
-        width: 100%;
-        height: 400px;
-    }
-
-
-    .tituloDos{
-        text-align: center;
-        font-size:50px;
-        font-weight: bold;
-        color:$verdeesp;
-        width: 500px;
-        top: 200px;
-    }
-
-    .tituloTres{
-        text-align: center;
-        font-size:30px;
-        font-weight: bold;
-    }
-
-    .tarjetaOpc{
-        width: 300px;
-        height: 350px;
-        margin: 20px;
-    }
-
-    .tarjetaTit{
-        font-size:large;
-        margin: 10px;
-        height: 80px;
-    }
-    
-    .tarjetaImg{
-        width: 300px;
-        height: 150px;
-    }
-    
-    
-    .tarjetaDesc{
-        font-size: medium;
-    }
-
-    .imgWhatsapp{
-        margin: 0;
-    }
-    .imgWhatsapp img {
-        width: 60px;
-        height: 60px;
-    }
-
-    /*FOOTER*/
-
-
-    .footerSup{
-        display:flex;
-        justify-items: center;
-        padding: 10px;
-        height: 170px;
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-
-    .footerInf{
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-
-
-    .tarjetaFooterTit{
-        font-size: 15px;
-    }
-    
-    .tarjetaFooterDes{
-        font-size:small;
-    }
-    
-    .tarjetaFooter{
-        height: 130px;
-    }
-    
-    
-    .imgFooter{
-        height: 45px;
-        width: 45px; 
-    }
-
-    /*FOOTER*/
-}
-
-
-    /*PARA ENTREGA DE SASS VARIABLES*/
-
-
-
-
-    /*PARA ENTREGA DE SASS VARIABLES*/
-
-
-
-
-
-    
+@import 'min481';
+@import 'min769';
+@import 'min1025';
+@import 'min1280';

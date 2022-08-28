@@ -1,0 +1,153 @@
+/*MEDIA PARA 769*/
+
+@media (min-width:769px){
+
+    .cardLogo{
+        margin-top: 15px;
+        font-size: medium;
+    }
+
+    .logo{
+        width: 45px;
+        height: 45px;
+    }
+
+    .buscador{
+        width: 250px;
+        padding: 10px;
+        font-weight: bolder;
+        font-size: medium;
+        }
+    
+    /*MENU*/
+
+    header{
+        div{
+            nav{
+                ul{
+                    top:0px;
+                    position:static;
+                    display:flex;
+                    justify-content:flex-end;
+                    background: black;
+                    list-style: none;
+                    text-decoration: none;
+                    text-align: center;
+                    height:20px;
+                    right: 10px;
+                    li{
+                        top: 0px;
+                        margin: 0px;
+                        line-height: 0px;
+                        z-index: 3;
+                        a{
+                            color:$rojoesp;
+                            font-size:20px;
+                            font-weight: bold;
+                            text-decoration: none;
+                            padding:10px;
+                            border:none;
+                            top: 0px;
+                            z-index: 3;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    header div label img{
+        display: none;
+    }
+   
+    /*MENU*/
+
+    .infoAdd{
+        width: 769px;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+
+    .infoAdd ul li{
+        padding: 25px;
+    }
+    
+    .infoAdd ul li a{
+        font-size: 25px;
+    }
+
+    /*SLIDER*/
+    .cajaCarousel{
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 769px;
+    }
+    
+    .cajaPpal{
+        max-width: 768px;
+    }
+    
+    .cajaPpal img{
+        max-width: 766px;
+        border: solid 2px $verdeesp;
+    }
+    
+    .cajaDesc{
+        max-width: 768px;
+    }
+    
+    .cajaDesc h3{
+        font-size: large;
+    }
+
+    .tituloDos{
+        text-align: center;
+        font-size:50px;
+        font-weight: bold;
+        color:$verdeesp;
+    }
+
+    .tituloTres{
+        text-align: center;
+        font-size:30px;
+        font-weight: bold;
+    }
+
+    .imgWhatsapp{
+        margin: 0;
+    }
+    .imgWhatsapp img {
+        width: 60px;
+        height: 60px;
+    }
+
+    /*FOOTER*/
+
+    .footerSup{
+        display:flex;
+        justify-items: center;
+        padding: 10px;
+        height: 170px;
+    }
+
+    .tarjetaFooterTit{
+        font-size: 15px;
+    }
+    
+    .tarjetaFooterDes{
+        font-size:small;
+    }
+    
+    .tarjetaFooter{
+        height: 130px;
+    }
+    
+    .imgFooter{
+        height: 45px;
+        width: 45px; 
+    }
+    /*FOOTER*/
+
+}
