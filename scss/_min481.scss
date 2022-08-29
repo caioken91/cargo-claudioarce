@@ -2,6 +2,11 @@
 
 @media (min-width:481px){
 
+    .buscador{
+        width: 180px;
+        font-size: 13px;
+    }
+
 
     /*ZONA MAIN*/
 
@@ -23,5 +28,10 @@
     .cajaDesc h3{
         font-size: large;
     }
+
+    .cajaContacto{
+        max-width: 500px;
+    }
+
 
 }

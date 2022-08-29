@@ -22,6 +22,7 @@
     /*MENU*/
 
     header{
+        position: static;
         div{
             nav{
                 ul{
@@ -63,6 +64,10 @@
    
     /*MENU*/
 
+    main{
+        margin-top:20px;
+    }
+
     .infoAdd{
         width: 769px;
         margin-left: auto;
@@ -100,6 +105,14 @@
     
     .cajaDesc h3{
         font-size: large;
+    }
+
+    .tarjetaOpc{
+        margin: 25px;
+    }
+
+    .cajaContacto{
+        max-width: 600px;
     }
 
     .tituloDos{

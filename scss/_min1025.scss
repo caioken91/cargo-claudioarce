@@ -42,16 +42,17 @@
         margin-top: 30px;
     }
 
-    .contacWrapper{
+
+    .cajaContacto{
+        max-width: 750px;
         display: grid;
         grid-template-columns: 1fr 1fr;
             grid-template-areas: 
                 "form info"
             ;
     }
-
     .infoContacto{
-        margin-top: 50px;
+        padding: 1em;
     }
 
 

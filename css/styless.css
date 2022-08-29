@@ -1,12 +1,15 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap"); /*PALETA DE COLORES*/
+/*INPORTO FUENTES*/
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap");
+/*INPORTO VARIABLES*/
+/*PALETA DE COLORES*/
 body {
   margin: 0;
   font-family: "Orbitron", sans-serif;
   background-color: black;
 }
 
-/*GRILLA*/
+/*GRILLA QUE CONTIENE TODO EL CUERPO*/
 .contenedorGrilla {
   display: grid;
   grid-template-columns: 1fr;
@@ -15,6 +18,7 @@ body {
   margin: 0;
 }
 
+/*----------------SEPARADOR----------------*/
 /*ZONA HEADER*/
 header {
   grid-area: header;
@@ -27,7 +31,7 @@ header {
 }
 
 /*ZONA HEADER SUPERIOR*/
-.headerSup { /*AQUI VA EL LOGO Y EL BUSCADOR*/
+.headerSup {
   margin: auto;
   display: flex;
   align-items: center;
@@ -52,11 +56,11 @@ header {
 }
 
 .buscador {
-  width: 170px;
+  width: 160px;
   padding: 10px;
   color: #FF2C55;
   font-weight: bolder;
-  font-size: small;
+  font-size: 10px;
   border-radius: 4px;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   -webkit-backdrop-filter: blur(20px);
@@ -79,7 +83,6 @@ div label img {
   width: 45px;
   height: 45px;
   position: absolute;
-  border: solid 1px #FF2C55;
   margin-left: 15px;
 }
 
@@ -95,6 +98,11 @@ div label img {
   display: block;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+}
 header div nav ul {
   top: 160px;
   position: absolute;
@@ -118,8 +126,10 @@ header div nav ul li a {
   padding: 6px;
 }
 
+/*----------------SEPARADOR----------------*/
 /*ZONA CUERPO*/
 main {
+  margin-top: 160px;
   grid-area: main;
   text-align: center;
   align-items: center;
@@ -141,7 +151,7 @@ main {
   display: flex;
   display: inline-block;
   grid-area: parteB;
-  background: #0E0F26;
+  background: black;
   text-align: left;
   max-width: 100%;
 }
@@ -149,6 +159,8 @@ main {
 .infoAdd ul li {
   padding: 10px;
   list-style: none;
+  border-top: solid 1px #34c85a;
+  border-bottom: solid 1px #34c85a;
 }
 
 .infoAdd ul li a {
@@ -164,17 +176,27 @@ main {
   margin-right: auto;
   padding: 1em;
   color: #FF2C55;
+  border: solid 2px #FF2C55;
 }
 
 /*FORMULARIO DE CONTACTO, ES UN GRID*/
-.contacWrapper {
+.cajaContacto {
+  border: solid 2px #FF2C55;
+  max-width: 400px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: "form" "info";
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.contacWrapper > * {
-  padding: 1em;
+.contacForm {
+  grid-area: form;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .menuFormulario {
@@ -191,21 +213,23 @@ main {
   max-width: 100%;
 }
 
-.contacForm {
-  grid-area: form;
-  display: flex;
-}
-
 .infoContacto {
   grid-area: info;
   background: #000;
   text-align: left;
   max-width: 300px;
   display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .infoContacto li {
   list-style: none;
+}
+
+.miniIcon {
+  width: 20px;
+  height: 20px;
 }
 
 /*FORMULARIO DE CONTACTO, ES UN GRID----CIERRE*/
@@ -255,6 +279,7 @@ main {
 }
 
 /*GRID DEL MAIN SUPERIOR, CIERRE*/
+/*TARJETA DE OPCIONES, PARA SERVICIOS O LAS SUCURSALES*/
 .tarjetaOpc {
   width: 200px;
   height: 250px;
@@ -290,6 +315,7 @@ main {
   border-top: solid 2px #34c85a;
 }
 
+/* CIERRE TARJETA DE OPCIONES, PARA SERVICIOS O LAS SUCURSALES*/
 .tituloTres {
   text-align: center;
   font-size: x-large;
@@ -367,6 +393,10 @@ footer ul li {
 
 /*MEDIA PARA 481*/
 @media (min-width: 481px) {
+  .buscador {
+    width: 180px;
+    font-size: 13px;
+  }
   /*ZONA MAIN*/
   .cajaPpal {
     grid-area: cajaA;
@@ -382,6 +412,9 @@ footer ul li {
   }
   .cajaDesc h3 {
     font-size: large;
+  }
+  .cajaContacto {
+    max-width: 500px;
   }
 }
 /*MEDIA PARA 769*/
@@ -401,6 +434,9 @@ footer ul li {
     font-size: medium;
   }
   /*MENU*/
+  header {
+    position: static;
+  }
   header div nav ul {
     top: 0px;
     position: static;
@@ -433,6 +469,9 @@ footer ul li {
     display: none;
   }
   /*MENU*/
+  main {
+    margin-top: 20px;
+  }
   .infoAdd {
     width: 769px;
     margin-left: auto;
@@ -462,6 +501,12 @@ footer ul li {
   }
   .cajaDesc h3 {
     font-size: large;
+  }
+  .tarjetaOpc {
+    margin: 25px;
+  }
+  .cajaContacto {
+    max-width: 600px;
   }
   .tituloDos {
     text-align: center;
@@ -526,13 +571,14 @@ footer ul li {
     margin-right: 50px;
     margin-top: 30px;
   }
-  .contacWrapper {
+  .cajaContacto {
+    max-width: 750px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "form info";
   }
   .infoContacto {
-    margin-top: 50px;
+    padding: 1em;
   }
   .cajaGrilla {
     display: grid;
@@ -617,6 +663,18 @@ footer ul li {
     width: 45px;
   }
   /*FOOTER*/
+}
+@media (min-width: 1280px) {
+  main {
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+  .cajaCarousel {
+    max-width: 1000px;
+  }
+  .infoAdd {
+    width: 1000px;
+  }
 }
 
 /*# sourceMappingURL=styless.css.map */
