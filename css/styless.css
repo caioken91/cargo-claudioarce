@@ -6,7 +6,7 @@
 body {
   margin: 0;
   font-family: "Orbitron", sans-serif;
-  background-color: black;
+  background-color: #031321;
 }
 
 /*GRILLA QUE CONTIENE TODO EL CUERPO*/
@@ -23,7 +23,7 @@ body {
 header {
   grid-area: header;
   width: 100%;
-  background-color: black;
+  background-color: #031321;
   color: #FF2C55;
   margin: 0;
   list-style: none;
@@ -109,7 +109,7 @@ header div nav ul {
   display: none;
   width: 100%;
   height: 100vh;
-  background: black;
+  background: #031321;
   list-style: none;
   text-decoration: none;
   text-align: center;
@@ -137,36 +137,8 @@ main {
   color: #FF2C55;
 }
 
-.mainSup {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: "parteA" "parteB";
-}
-
 .cajaCarousel {
-  grid-area: parteA;
-}
-
-.infoAdd {
-  display: flex;
-  display: inline-block;
-  grid-area: parteB;
-  background: black;
-  text-align: left;
-  max-width: 100%;
-}
-
-.infoAdd ul li {
-  padding: 10px;
-  list-style: none;
-  border-top: solid 1px #34c85a;
-  border-bottom: solid 1px #34c85a;
-}
-
-.infoAdd ul li a {
-  color: #FFFCFF;
-  text-decoration: none;
-  font-size: 15px;
+  margin-bottom: 20px;
 }
 
 /*ANIMACION CAROUSEL*/
@@ -182,7 +154,7 @@ main {
 /*FORMULARIO DE CONTACTO, ES UN GRID*/
 .cajaContacto {
   border: solid 2px #FF2C55;
-  max-width: 400px;
+  max-width: 350px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: "form" "info";
@@ -215,7 +187,7 @@ main {
 
 .infoContacto {
   grid-area: info;
-  background: #000;
+  background: #031321;
   text-align: left;
   max-width: 300px;
   display: inline-block;
@@ -252,30 +224,43 @@ main {
 
 .cajaPpal {
   grid-area: cajaA;
-  max-width: 370px;
+  max-width: 360px;
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
-  border: solid 2px #34c85a;
+  border-radius: 10px 10px 0 0;
+  height: 100%;
+}
+
+.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }
 
 .cajaPpal img {
-  max-width: 368px;
-  border: solid 2px #34c85a;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 100%;
 }
 
 .cajaDesc {
-  border: solid 2px #34c85a;
   grid-area: cajaB;
-  max-width: 370px;
+  max-width: 360px;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
+  border-radius: 0 0 10px 10px;
 }
 
 .cajaDesc h3 {
   color: #34c85a;
   font-size: medium;
+}
+
+.bordeVerde {
+  border: solid 2px #34c85a;
 }
 
 /*GRID DEL MAIN SUPERIOR, CIERRE*/
@@ -348,7 +333,7 @@ main {
 /*ZONA FOOTER*/
 footer {
   grid-area: footer;
-  background-color: black;
+  background-color: #031321;
   text-align: center;
 }
 
@@ -442,7 +427,6 @@ footer ul li {
     position: static;
     display: flex;
     justify-content: flex-end;
-    background: black;
     list-style: none;
     text-decoration: none;
     text-align: center;
@@ -494,7 +478,6 @@ footer ul li {
   }
   .cajaPpal img {
     max-width: 766px;
-    border: solid 2px #34c85a;
   }
   .cajaDesc {
     max-width: 768px;
@@ -592,10 +575,11 @@ footer ul li {
     max-width: 600px;
     display: inline-block;
     margin-right: 0;
+    border-radius: 20px 0 0 20px;
   }
   .cajaPpal img {
     max-width: 558px;
-    border: solid 2px #34c85a;
+    border-radius: 20px 0 0 20px;
   }
   .cajaDesc {
     grid-area: cajaB;
@@ -604,6 +588,7 @@ footer ul li {
     padding: 1em;
     height: 100%;
     max-width: 600px;
+    border-radius: 0 20px 20px 0;
   }
   .cajaDesc h3 {
     font-size: large;
