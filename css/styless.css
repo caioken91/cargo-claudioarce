@@ -9,6 +9,18 @@ body {
   background-color: #031321;
 }
 
+.texVerde {
+  color: #34c85a;
+}
+
+.texRojo {
+  color: #FF2C55;
+}
+
+.texBlanco {
+  color: #FFFCFF;
+}
+
 /*GRILLA QUE CONTIENE TODO EL CUERPO*/
 .contenedorGrilla {
   display: grid;
@@ -42,6 +54,11 @@ header {
 }
 
 /*CONTENEDOR LOGO CARGO*/
+.logo, .imgFooter {
+  width: 40px;
+  height: 40px;
+}
+
 .cardLogo {
   margin-top: 10px;
   display: inline-flex;
@@ -50,11 +67,21 @@ header {
   font-style: italic;
 }
 
-.logo, .imgFooter {
+.cardLogo .logo, .cardLogo .imgFooter {
   width: 40px;
   height: 40px;
+  filter: drop-shadow(0px 0px 1px #4b4b50);
+  animation: volar 3s linear infinite;
 }
 
+@keyframes volar {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
 .buscador {
   width: 160px;
   padding: 10px;
@@ -126,6 +153,18 @@ header div nav ul li a {
   padding: 6px;
 }
 
+.linkNav {
+  padding: 10px 20px;
+  color: #FFFCFF;
+  background: #FF2C55;
+  text-decoration: none;
+  font-size: 15px;
+  overflow: hidden;
+  transition: 0.5s;
+  box-shadow: 0 0 10px #FF2C55, 0 0 20px #FF2C55;
+  border-radius: 5px;
+}
+
 /*----------------SEPARADOR----------------*/
 /*ZONA CUERPO*/
 main {
@@ -142,15 +181,6 @@ main {
 }
 
 /*ANIMACION CAROUSEL*/
-.caja {
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1em;
-  color: #FF2C55;
-  border: solid 2px #FF2C55;
-}
-
 /*FORMULARIO DE CONTACTO, ES UN GRID*/
 .cajaContacto {
   border: solid 2px #FF2C55;
@@ -162,6 +192,7 @@ main {
   margin-right: auto;
   margin-top: 20px;
   margin-bottom: 20px;
+  border-radius: 20px;
 }
 
 .contacForm {
@@ -217,9 +248,8 @@ main {
 
 .tituloDos {
   text-align: center;
-  font-size: x-large;
+  font-size: 20px;
   font-weight: bold;
-  color: #34c85a;
 }
 
 .cajaPpal {
@@ -252,39 +282,58 @@ main {
   margin-right: auto;
   text-align: left;
   border-radius: 0 0 10px 10px;
+  padding: 1em;
 }
 
 .cajaDesc h3 {
-  color: #34c85a;
-  font-size: medium;
+  font-size: 15px;
 }
 
 .bordeVerde {
   border: solid 2px #34c85a;
 }
 
+.bordeBlanco {
+  border: solid 2px #FFFCFF;
+}
+
+.botonNeo {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #255784;
+  background: #2196f3;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 15px;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-left: 50px;
+  margin-top: 10px;
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+  border-radius: 5px;
+}
+
 /*GRID DEL MAIN SUPERIOR, CIERRE*/
 /*TARJETA DE OPCIONES, PARA SERVICIOS O LAS SUCURSALES*/
 .tarjetaOpc {
-  width: 200px;
-  height: 250px;
+  width: 240px;
+  height: 260px;
   display: inline-block;
   overflow: hidden;
   text-align: center;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  /*box-shadow: 0 4px 4px 4px rgba(52, 200, 90, 0.37);*/
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 20px;
-  margin: 5px;
+  margin: 15px;
+  padding: 5px;
+  box-shadow: 0 0 5px #34c85a, 0 0 10px #34c85a, 0 0 20px #34c85a;
 }
 
 .tarjetaTit {
   font-size: medium;
   font-weight: bold;
   text-align: center;
-  height: 30px;
+  height: 50px;
 }
 
 .tarjetaImg {
@@ -449,6 +498,23 @@ footer ul li {
     top: 0px;
     z-index: 3;
   }
+  .linkNav {
+    padding: 10px 10px;
+    color: #FF2C55;
+    background: #031321;
+    text-decoration: none;
+    font-size: 17px;
+    overflow: hidden;
+    transition: 0.5s;
+    box-shadow: none;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+  .linkNav:hover {
+    color: #FFFCFF;
+    background: #FF2C55;
+    box-shadow: 0 0 10px #FF2C55, 0 0 20px #FF2C55;
+  }
   header div label img {
     display: none;
   }
@@ -481,21 +547,48 @@ footer ul li {
   }
   .cajaDesc {
     max-width: 768px;
+    padding: 2em;
   }
   .cajaDesc h3 {
     font-size: large;
   }
+  .botonNeo {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #FFFCFF;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 15px;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-left: 50px;
+    box-shadow: none;
+    background: #031321;
+  }
+  .botonNeo:hover {
+    color: #255784;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+  }
   .tarjetaOpc {
+    width: 250px;
+    height: 300px;
     margin: 25px;
+    transition: 0.5s;
+    box-shadow: none;
+  }
+  .tarjetaOpc:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 0 10px #34c85a, 0 0 40px #34c85a, 0 0 80px #34c85a;
   }
   .cajaContacto {
     max-width: 600px;
   }
   .tituloDos {
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
-    color: #34c85a;
   }
   .tituloTres {
     text-align: center;
@@ -547,6 +640,15 @@ footer ul li {
   /*MENU*/
   header div nav ul li a {
     font-size: 25px;
+  }
+  .linkNav {
+    padding: 10px 10px;
+    color: #FF2C55;
+    background: #031321;
+    text-decoration: none;
+    font-size: 22px;
+    border-radius: 5px;
+    margin-left: 10px;
   }
   /*MENU*/
   main {
@@ -650,6 +752,11 @@ footer ul li {
   /*FOOTER*/
 }
 @media (min-width: 1280px) {
+  .linkNav {
+    padding: 10px 10px;
+    font-size: 25px;
+    margin-left: 15px;
+  }
   main {
     margin-left: 150px;
     margin-right: 150px;

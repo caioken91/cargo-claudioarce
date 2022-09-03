@@ -49,14 +49,32 @@
                             border:none;
                             top: 0px;
                             z-index: 3;
-
                         }
                     }
                 }
             }
         }
     }
-    
+
+    .linkNav{
+        padding: 10px 10px;
+        color: $rojoesp;
+        background: $azulesp;
+        text-decoration: none;
+        font-size: 17px;
+        overflow: hidden;
+        transition: 0.5s;
+        box-shadow: none;
+        border-radius: 5px;
+        margin-left: 10px;
+    }
+
+    .linkNav:hover{
+        color: $blancoesp;
+        background: $rojoesp;
+        box-shadow: 0 0 10px $rojoesp,0 0 20px $rojoesp;
+    }
+
     header div label img{
         display: none;
     }
@@ -99,14 +117,44 @@
     
     .cajaDesc{
         max-width: 768px;
+        padding: 2em;
     }
     
     .cajaDesc h3{
         font-size: large;
     }
 
+    .botonNeo{
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        color: $blancoesp;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 15px;
+        overflow: hidden;
+        transition: 0.5s;
+        margin-left: 50px;
+        box-shadow: none;
+        background: $azulesp;
+    }
+    
+    .botonNeo:hover{
+        color: #255784;
+        background: #2196f3;
+        box-shadow: 0 0 10px #2196f3,0 0 40px #2196f3,0 0 80px #2196f3;
+    }
+
     .tarjetaOpc{
+        @include sizes(250px,300px);
         margin: 25px;
+        transition: 0.5s;
+        box-shadow: none;
+    }
+
+    .tarjetaOpc:hover{
+        transform: translateY(-20px);
+        box-shadow: 0 0 10px $verdeesp,0 0 40px $verdeesp,0 0 80px $verdeesp;
     }
 
     .cajaContacto{
@@ -115,9 +163,8 @@
 
     .tituloDos{
         text-align: center;
-        font-size:50px;
+        font-size:40px;
         font-weight: bold;
-        color:$verdeesp;
     }
 
     .tituloTres{
