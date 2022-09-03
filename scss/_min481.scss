@@ -1,15 +1,14 @@
-/*MEDIA PARA 481*/
+/*----------------MEDIA PARA 481----------------*/
 
 @media (min-width:481px){
-
+    /*----------------FOOTER SUPERIOR----------------*/
     .buscador{
         width: 180px;
         font-size: 13px;
     }
+    /*----------------SEPARADOR----------------*/
 
-
-    /*ZONA MAIN*/
-
+    /*----------------GRILLA MAIN SUPERIOR----------------*/
     .cajaPpal{
         grid-area: cajaA;
         max-width: 480px;
@@ -24,14 +23,12 @@
         padding: 1em;
         max-width: 480px;
     }
-    
-    .cajaDesc h3{
-        font-size: large;
-    }
+    /*----------------SEPARADOR----------------*/
 
+    /*----------------GRILLA CONTACTO----------------*/
     .cajaContacto{
         max-width: 500px;
     }
-
-
+    /*----------------SEPARADOR----------------*/
 }
+/*----------------SEPARADOR----------------*/

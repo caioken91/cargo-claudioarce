@@ -1,0 +1,21 @@
+/*----------------BODY ESTILOS BASICOS----------------*/
+body{
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background-color: $azulesp;
+}
+/*----------------SEPARADOR----------------*/
+
+/*----------------GRILLA QUE CONTIENE TODO EL CUERPO----------------*/
+.contenedorGrilla{
+    display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(20% auto 300px);
+        grid-template-areas: 
+            "header"
+            "main"
+            "footer"
+        ;
+    margin: 0;    
+}
+/*----------------SEPARADOR----------------*/

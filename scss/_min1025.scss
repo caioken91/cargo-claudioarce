@@ -1,23 +1,22 @@
-
-/*MEDIA PARA 1025*/
-
+/*----------------MEDIA PARA 1025----------------*/
 @media (min-width:1025px) {
 
-    .buscador{
-        width: 300px;
-        }
-    
-    .headerInf{
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-
+    /*----------------HEADER SUPERIOR----------------*/
     .headerSup{
         margin-left: 50px;
         margin-right: 50px;
     }
 
-    /*MENU*/
+    .buscador{
+        width: 300px;
+        }
+    /*----------------SEPARADOR----------------*/
+    
+    /*----------------HEADER INFERIOR----------------*/
+    .headerInf{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
 
     header{
         div{
@@ -32,7 +31,7 @@
             }
         }
     }
-
+    
     .linkNav{
         padding: 10px 10px;
         color: $rojoesp;
@@ -42,30 +41,17 @@
         border-radius: 5px;
         margin-left: 10px;
     }
+    /*----------------SEPARADOR----------------*/
     
-   
-    /*MENU*/
-
+    /*----------------MAIN ESTILOS BASICOS----------------*/
     main {
         margin-left: 50px;
         margin-right: 50px;
         margin-top: 30px;
     }
+    /*----------------SEPARADOR----------------*/
 
-
-    .cajaContacto{
-        max-width: 750px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-            grid-template-areas: 
-                "form info"
-            ;
-    }
-    .infoContacto{
-        padding: 1em;
-    }
-
-
+    /*----------------GRILLA MAIN SUPERIOR----------------*/
     .cajaGrilla{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -99,24 +85,9 @@
         max-width: 600px;
         border-radius: 0 20px 20px 0;
     }
-    
-    .cajaDesc h3{
-        font-size: large;
-    }
+    /*----------------SEPARADOR----------------*/
 
-    .fondoTit{
-        width: auto;
-        height: 300px;
-        text-align: center;
-        margin-bottom: 110px;
-    }
-    
-    .tituloTres{
-        text-align: center;
-        font-size:30px;
-        font-weight: bold;
-    }
-
+    /*----------------TARJETAS DE OPCIONES Y SUCURSALES----------------*/
     .tarjetaOpc{
         @include sizes(300px,350px);
         margin: 20px;
@@ -136,9 +107,23 @@
     .tarjetaDesc{
         font-size: medium;
     }
+    /*----------------SEPARADOR----------------*/
 
-    /*FOOTER*/
+    /*----------------GRILLA CONTACTO----------------*/
+    .cajaContacto{
+        max-width: 750px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+                "form info"
+            ;
+    }
+    .infoContacto{
+        padding: 1em;
+    }
+    /*----------------SEPARADOR----------------*/
 
+    /*----------------FOOTER SUPERIOR----------------*/
     .footerSup{
         display:flex;
         justify-items: center;
@@ -148,19 +133,6 @@
         margin-right: 50px;
     }
 
-    .footerInf{
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-
-    .tarjetaFooterTit{
-        font-size: 15px;
-    }
-    
-    .tarjetaFooterDes{
-        font-size:small;
-    }
-    
     .tarjetaFooter{
         height: 130px;
     }
@@ -169,5 +141,13 @@
         height: 45px;
         width: 45px; 
     }
-    /*FOOTER*/
+    /*----------------SEPARADOR----------------*/
+
+    /*----------------FOOTER SUPERIOR----------------*/
+    .footerInf{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    /*----------------SEPARADOR----------------*/
 }
+/*----------------SEPARADOR----------------*/

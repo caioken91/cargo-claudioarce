@@ -1,7 +1,27 @@
-/*MEDIA PARA 769*/
+/*----------------MEDIA PARA 769----------------*/
 
 @media (min-width:769px){
 
+    /*----------------TAMAÑO DE FUENTES----------------*/
+    .titGr{
+        font-size:30px;
+        font-weight: bold;
+    }
+
+    .descGr{
+        font-size: 18px;
+    }
+
+    .titCh{
+        font-size: 15px;
+    }
+
+    .descCh{
+        font-size: 12px;
+    }
+    /*----------------SEPARADOR----------------*/
+
+    /*----------------HEADER SUPERIOR----------------*/
     .cardLogo{
         margin-top: 15px;
         font-size: medium;
@@ -18,9 +38,9 @@
         font-weight: bolder;
         font-size: medium;
         }
-    
-    /*MENU*/
+    /*----------------SEPARADOR----------------*/
 
+    /*----------------HEADER INFERIOR----------------*/
     header{
         position: static;
         div{
@@ -78,35 +98,23 @@
     header div label img{
         display: none;
     }
+    /*----------------SEPARADOR----------------*/
    
-    /*MENU*/
-
+    /*----------------MAIN ESTILOS BASICOS----------------*/
     main{
         margin-top:20px;
     }
+    /*----------------SEPARADOR----------------*/
 
-    .infoAdd{
-        width: 769px;
-        margin-left: auto;
-        margin-right: auto;
-        
-    }
-
-    .infoAdd ul li{
-        padding: 25px;
-    }
-    
-    .infoAdd ul li a{
-        font-size: 25px;
-    }
-
-    /*SLIDER*/
+    /*----------------CONTENEDOR CAROUSEL----------------*/
     .cajaCarousel{
         margin-left: auto;
         margin-right: auto;
         max-width: 769px;
     }
+    /*----------------SEPARADOR----------------*/
     
+    /*----------------GRILLA MAIN SUPERIOR----------------*/
     .cajaPpal{
         max-width: 768px;
     }
@@ -120,10 +128,6 @@
         padding: 2em;
     }
     
-    .cajaDesc h3{
-        font-size: large;
-    }
-
     .botonNeo{
         position: relative;
         display: inline-block;
@@ -131,7 +135,7 @@
         color: $blancoesp;
         text-transform: uppercase;
         text-decoration: none;
-        font-size: 15px;
+        font-size: 18px;
         overflow: hidden;
         transition: 0.5s;
         margin-left: 50px;
@@ -144,7 +148,9 @@
         background: #2196f3;
         box-shadow: 0 0 10px #2196f3,0 0 40px #2196f3,0 0 80px #2196f3;
     }
+    /*----------------SEPARADOR----------------*/
 
+    /*----------------TARJETAS DE OPCIONES Y SUCURSALES----------------*/
     .tarjetaOpc{
         @include sizes(250px,300px);
         margin: 25px;
@@ -156,23 +162,15 @@
         transform: translateY(-20px);
         box-shadow: 0 0 10px $verdeesp,0 0 40px $verdeesp,0 0 80px $verdeesp;
     }
+    /*----------------SEPARADOR----------------*/
 
+    /*----------------GRILLA CONTACTO----------------*/
     .cajaContacto{
         max-width: 600px;
     }
+    /*----------------SEPARADOR----------------*/
 
-    .tituloDos{
-        text-align: center;
-        font-size:40px;
-        font-weight: bold;
-    }
-
-    .tituloTres{
-        text-align: center;
-        font-size:30px;
-        font-weight: bold;
-    }
-
+    /*----------------IMAGEN WHATSAPP----------------*/
     .imgWhatsapp{
         margin: 0;
     }
@@ -180,22 +178,14 @@
         width: 60px;
         height: 60px;
     }
+    /*----------------SEPARADOR----------------*/
 
-    /*FOOTER*/
-
+    /*----------------FOOTER SUPERIOR----------------*/
     .footerSup{
         display:flex;
         justify-items: center;
         padding: 10px;
         height: 170px;
-    }
-
-    .tarjetaFooterTit{
-        font-size: 15px;
-    }
-    
-    .tarjetaFooterDes{
-        font-size:small;
     }
     
     .tarjetaFooter{
@@ -206,6 +196,6 @@
         height: 45px;
         width: 45px; 
     }
-    /*FOOTER*/
-
+    /*----------------SEPARADOR----------------*/
 }
+/*----------------SEPARADOR----------------*/

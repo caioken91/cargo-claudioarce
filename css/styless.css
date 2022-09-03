@@ -1,14 +1,28 @@
 @charset "UTF-8";
-/*INPORTO FUENTES*/
+/*----------------IMPORTO FUENTE----------------*/
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap");
-/*INPORTO VARIABLES*/
+/*----------------IMPORTO VARIABLES Y ESTILOS PARA TEXTOS Y BORDES----------------*/
 /*PALETA DE COLORES*/
-body {
-  margin: 0;
-  font-family: "Orbitron", sans-serif;
-  background-color: #031321;
+/*----------------TAMAÑO DE FUENTES----------------*/
+.titGr {
+  font-size: 25px;
+  font-weight: bold;
 }
 
+.descGr {
+  font-size: 15px;
+}
+
+.titCh {
+  font-size: small;
+}
+
+.descCh {
+  font-size: x-small;
+}
+
+/*----------------SEPARADOR----------------*/
+/*----------------COLOR DE FUENTES----------------*/
 .texVerde {
   color: #34c85a;
 }
@@ -21,7 +35,37 @@ body {
   color: #FFFCFF;
 }
 
-/*GRILLA QUE CONTIENE TODO EL CUERPO*/
+.texAzulNeo {
+  color: #2196f3;
+}
+
+/*----------------SEPARADOR----------------*/
+/*----------------BORDES Y GLASS----------------*/
+.bordeVerde {
+  border: solid 2px #34c85a;
+}
+
+.bordeBlanco {
+  border: solid 2px #FFFCFF;
+}
+
+.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+/*----------------SEPARADOR----------------*/
+/*----------------IMPORTO EL BODY----------------*/
+/*----------------BODY ESTILOS BASICOS----------------*/
+body {
+  margin: 0;
+  font-family: "Orbitron", sans-serif;
+  background-color: #031321;
+}
+
+/*----------------SEPARADOR----------------*/
+/*----------------GRILLA QUE CONTIENE TODO EL CUERPO----------------*/
 .contenedorGrilla {
   display: grid;
   grid-template-columns: 1fr;
@@ -31,18 +75,20 @@ body {
 }
 
 /*----------------SEPARADOR----------------*/
-/*ZONA HEADER*/
+/*----------------IMPORTO EL HEADER----------------*/
+/*----------------HEADER ESTILOS BASICOS----------------*/
 header {
   grid-area: header;
   width: 100%;
-  background-color: #031321;
   color: #FF2C55;
   margin: 0;
   list-style: none;
   text-decoration: none;
+  background: #031321;
 }
 
-/*ZONA HEADER SUPERIOR*/
+/*----------------SEPARADOR----------------*/
+/*----------------HEADER SUPERIOR----------------*/
 .headerSup {
   margin: auto;
   display: flex;
@@ -53,7 +99,6 @@ header {
   height: 80px;
 }
 
-/*CONTENEDOR LOGO CARGO*/
 .logo, .imgFooter {
   width: 40px;
   height: 40px;
@@ -89,23 +134,18 @@ header {
   font-weight: bolder;
   font-size: 10px;
   border-radius: 4px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 4px 4px 0px rgba(255, 44, 85, 0.37);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 8px;
 }
 
-/*ZONA HEADER INFERIOR*/
+/*----------------SEPARADOR----------------*/
+/*----------------HEADER INFERIOR----------------*/
 .headerInf {
-  color: #FF2C55;
   height: 80px;
   z-index: 2;
   border-bottom: solid 2px #FF2C55;
 }
 
-/*BARRA DE NAVEGACIÓN*/
 div label img {
   width: 45px;
   height: 45px;
@@ -166,7 +206,8 @@ header div nav ul li a {
 }
 
 /*----------------SEPARADOR----------------*/
-/*ZONA CUERPO*/
+/*----------------IMPORTO EL MAIN----------------*/
+/*----------------MAIN ESTILOS BASICOS----------------*/
 main {
   margin-top: 160px;
   grid-area: main;
@@ -176,12 +217,69 @@ main {
   color: #FF2C55;
 }
 
+/*----------------SEPARADOR----------------*/
+/*----------------CONTENEDOR CAROUSEL----------------*/
 .cajaCarousel {
   margin-bottom: 20px;
 }
 
-/*ANIMACION CAROUSEL*/
-/*FORMULARIO DE CONTACTO, ES UN GRID*/
+/*----------------SEPARADOR----------------*/
+/*----------------GRILLA MAIN SUPERIOR----------------*/
+.cajaGrilla {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "cajaA" "cajaB";
+  place-items: center;
+}
+
+.cajaPpal {
+  grid-area: cajaA;
+  max-width: 360px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px 10px 0 0;
+  height: 100%;
+}
+
+.cajaPpal img {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cajaDesc {
+  grid-area: cajaB;
+  max-width: 360px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  border-radius: 0 0 10px 10px;
+  padding: 1em;
+}
+
+.botonNeo {
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+  color: #255784;
+  background: #2196f3;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 15px;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-left: 50px;
+  margin-top: 10px;
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+  border-radius: 5px;
+}
+
+/*----------------SEPARADOR----------------*/
+/*----------------GRILLA CONTACTO----------------*/
 .cajaContacto {
   border: solid 2px #FF2C55;
   max-width: 350px;
@@ -214,6 +312,8 @@ main {
 
 .inputForm {
   max-width: 100%;
+  padding: 8px;
+  margin: 4px;
 }
 
 .infoContacto {
@@ -235,87 +335,8 @@ main {
   height: 20px;
 }
 
-/*FORMULARIO DE CONTACTO, ES UN GRID----CIERRE*/
-/*GRID DEL MAIN SUPERIOR*/
-.cajaGrilla {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: "cajaA" "cajaB";
-  place-items: center;
-}
-
-.tituloDos {
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.cajaPpal {
-  grid-area: cajaA;
-  max-width: 360px;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 10px 10px 0 0;
-  height: 100%;
-}
-
-.glass {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-}
-
-.cajaPpal img {
-  border-radius: 10px 10px 0 0;
-  width: 100%;
-  height: 100%;
-}
-
-.cajaDesc {
-  grid-area: cajaB;
-  max-width: 360px;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-  border-radius: 0 0 10px 10px;
-  padding: 1em;
-}
-
-.cajaDesc h3 {
-  font-size: 15px;
-}
-
-.bordeVerde {
-  border: solid 2px #34c85a;
-}
-
-.bordeBlanco {
-  border: solid 2px #FFFCFF;
-}
-
-.botonNeo {
-  position: relative;
-  display: inline-block;
-  padding: 10px 20px;
-  color: #255784;
-  background: #2196f3;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 15px;
-  overflow: hidden;
-  transition: 0.5s;
-  margin-left: 50px;
-  margin-top: 10px;
-  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
-  border-radius: 5px;
-}
-
-/*GRID DEL MAIN SUPERIOR, CIERRE*/
-/*TARJETA DE OPCIONES, PARA SERVICIOS O LAS SUCURSALES*/
+/*----------------SEPARADOR----------------*/
+/*----------------TARJETAS DE OPCIONES Y SUCURSALES----------------*/
 .tarjetaOpc {
   width: 240px;
   height: 260px;
@@ -349,25 +370,8 @@ main {
   border-top: solid 2px #34c85a;
 }
 
-/* CIERRE TARJETA DE OPCIONES, PARA SERVICIOS O LAS SUCURSALES*/
-.tituloTres {
-  text-align: center;
-  font-size: x-large;
-  font-weight: bold;
-  color: #34c85a;
-}
-
-.inputForm {
-  padding: 8px;
-  margin: 4px;
-}
-
-.cajaTextoGr {
-  width: auto;
-  height: 400px;
-  color: #34c85a;
-}
-
+/*----------------SEPARADOR----------------*/
+/*----------------IMAGEN WHATSAPP----------------*/
 .imgWhatsapp {
   position: fixed;
   bottom: 0;
@@ -379,34 +383,20 @@ main {
   height: 50px;
 }
 
-/*ZONA FOOTER*/
+/*----------------SEPARADOR----------------*/
+/*----------------IMPORTO EL FOOTER----------------*/
+/*----------------FOOTER ESTILOS BASICOS----------------*/
 footer {
   grid-area: footer;
   background-color: #031321;
   text-align: center;
 }
 
+/*----------------SEPARADOR----------------*/
+/*----------------FOOTER SUPERIOR----------------*/
 .footerSup {
   border-top: solid 4px #FF2C55;
   margin: auto;
-}
-
-.footerInf {
-  margin: 25px;
-  border-top: solid 2px #FF2C55;
-  text-align: center;
-}
-
-.tarjetaFooterTit {
-  font-size: small;
-  color: #FF2C55;
-  padding: 5px;
-}
-
-.tarjetaFooterDes {
-  font-size: x-small;
-  color: #FF2C55;
-  padding: 5px;
 }
 
 .tarjetaFooter {
@@ -414,6 +404,7 @@ footer {
   height: 100px;
   margin: auto;
   text-align: left;
+  padding: 5px;
 }
 
 .imgFooter {
@@ -425,13 +416,26 @@ footer ul li {
   display: inline-block;
 }
 
-/*MEDIA PARA 481*/
+/*----------------SEPARADOR----------------*/
+/*----------------FOOTER INFERIOR----------------*/
+.footerInf {
+  margin: 25px;
+  border-top: solid 2px #FF2C55;
+  text-align: center;
+  padding: 5px;
+}
+
+/*----------------SEPARADOR----------------*/
+/*----------------IMPORTO LOS MEDIAS QUERIES----------------*/
+/*----------------MEDIA PARA 481----------------*/
 @media (min-width: 481px) {
+  /*----------------FOOTER SUPERIOR----------------*/
   .buscador {
     width: 180px;
     font-size: 13px;
   }
-  /*ZONA MAIN*/
+  /*----------------SEPARADOR----------------*/
+  /*----------------GRILLA MAIN SUPERIOR----------------*/
   .cajaPpal {
     grid-area: cajaA;
     max-width: 480px;
@@ -444,15 +448,32 @@ footer ul li {
     padding: 1em;
     max-width: 480px;
   }
-  .cajaDesc h3 {
-    font-size: large;
-  }
+  /*----------------SEPARADOR----------------*/
+  /*----------------GRILLA CONTACTO----------------*/
   .cajaContacto {
     max-width: 500px;
   }
+  /*----------------SEPARADOR----------------*/
 }
-/*MEDIA PARA 769*/
+/*----------------SEPARADOR----------------*/
+/*----------------MEDIA PARA 769----------------*/
 @media (min-width: 769px) {
+  /*----------------TAMAÑO DE FUENTES----------------*/
+  .titGr {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .descGr {
+    font-size: 18px;
+  }
+  .titCh {
+    font-size: 15px;
+  }
+  .descCh {
+    font-size: 12px;
+  }
+  /*----------------SEPARADOR----------------*/
+  /*----------------HEADER SUPERIOR----------------*/
   .cardLogo {
     margin-top: 15px;
     font-size: medium;
@@ -467,7 +488,8 @@ footer ul li {
     font-weight: bolder;
     font-size: medium;
   }
-  /*MENU*/
+  /*----------------SEPARADOR----------------*/
+  /*----------------HEADER INFERIOR----------------*/
   header {
     position: static;
   }
@@ -518,27 +540,20 @@ footer ul li {
   header div label img {
     display: none;
   }
-  /*MENU*/
+  /*----------------SEPARADOR----------------*/
+  /*----------------MAIN ESTILOS BASICOS----------------*/
   main {
     margin-top: 20px;
   }
-  .infoAdd {
-    width: 769px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .infoAdd ul li {
-    padding: 25px;
-  }
-  .infoAdd ul li a {
-    font-size: 25px;
-  }
-  /*SLIDER*/
+  /*----------------SEPARADOR----------------*/
+  /*----------------CONTENEDOR CAROUSEL----------------*/
   .cajaCarousel {
     margin-left: auto;
     margin-right: auto;
     max-width: 769px;
   }
+  /*----------------SEPARADOR----------------*/
+  /*----------------GRILLA MAIN SUPERIOR----------------*/
   .cajaPpal {
     max-width: 768px;
   }
@@ -549,9 +564,6 @@ footer ul li {
     max-width: 768px;
     padding: 2em;
   }
-  .cajaDesc h3 {
-    font-size: large;
-  }
   .botonNeo {
     position: relative;
     display: inline-block;
@@ -559,7 +571,7 @@ footer ul li {
     color: #FFFCFF;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 18px;
     overflow: hidden;
     transition: 0.5s;
     margin-left: 50px;
@@ -571,6 +583,8 @@ footer ul li {
     background: #2196f3;
     box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
   }
+  /*----------------SEPARADOR----------------*/
+  /*----------------TARJETAS DE OPCIONES Y SUCURSALES----------------*/
   .tarjetaOpc {
     width: 250px;
     height: 300px;
@@ -582,19 +596,13 @@ footer ul li {
     transform: translateY(-20px);
     box-shadow: 0 0 10px #34c85a, 0 0 40px #34c85a, 0 0 80px #34c85a;
   }
+  /*----------------SEPARADOR----------------*/
+  /*----------------GRILLA CONTACTO----------------*/
   .cajaContacto {
     max-width: 600px;
   }
-  .tituloDos {
-    text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-  }
-  .tituloTres {
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-  }
+  /*----------------SEPARADOR----------------*/
+  /*----------------IMAGEN WHATSAPP----------------*/
   .imgWhatsapp {
     margin: 0;
   }
@@ -602,18 +610,13 @@ footer ul li {
     width: 60px;
     height: 60px;
   }
-  /*FOOTER*/
+  /*----------------SEPARADOR----------------*/
+  /*----------------FOOTER SUPERIOR----------------*/
   .footerSup {
     display: flex;
     justify-items: center;
     padding: 10px;
     height: 170px;
-  }
-  .tarjetaFooterTit {
-    font-size: 15px;
-  }
-  .tarjetaFooterDes {
-    font-size: small;
   }
   .tarjetaFooter {
     height: 130px;
@@ -622,22 +625,25 @@ footer ul li {
     height: 45px;
     width: 45px;
   }
-  /*FOOTER*/
+  /*----------------SEPARADOR----------------*/
 }
-/*MEDIA PARA 1025*/
+/*----------------SEPARADOR----------------*/
+/*----------------MEDIA PARA 1025----------------*/
 @media (min-width: 1025px) {
-  .buscador {
-    width: 300px;
-  }
-  .headerInf {
-    margin-left: 50px;
-    margin-right: 50px;
-  }
+  /*----------------HEADER SUPERIOR----------------*/
   .headerSup {
     margin-left: 50px;
     margin-right: 50px;
   }
-  /*MENU*/
+  .buscador {
+    width: 300px;
+  }
+  /*----------------SEPARADOR----------------*/
+  /*----------------HEADER INFERIOR----------------*/
+  .headerInf {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
   header div nav ul li a {
     font-size: 25px;
   }
@@ -650,21 +656,15 @@ footer ul li {
     border-radius: 5px;
     margin-left: 10px;
   }
-  /*MENU*/
+  /*----------------SEPARADOR----------------*/
+  /*----------------MAIN ESTILOS BASICOS----------------*/
   main {
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 30px;
   }
-  .cajaContacto {
-    max-width: 750px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "form info";
-  }
-  .infoContacto {
-    padding: 1em;
-  }
+  /*----------------SEPARADOR----------------*/
+  /*----------------GRILLA MAIN SUPERIOR----------------*/
   .cajaGrilla {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -692,20 +692,8 @@ footer ul li {
     max-width: 600px;
     border-radius: 0 20px 20px 0;
   }
-  .cajaDesc h3 {
-    font-size: large;
-  }
-  .fondoTit {
-    width: auto;
-    height: 300px;
-    text-align: center;
-    margin-bottom: 110px;
-  }
-  .tituloTres {
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-  }
+  /*----------------SEPARADOR----------------*/
+  /*----------------TARJETAS DE OPCIONES Y SUCURSALES----------------*/
   .tarjetaOpc {
     width: 300px;
     height: 350px;
@@ -723,7 +711,19 @@ footer ul li {
   .tarjetaDesc {
     font-size: medium;
   }
-  /*FOOTER*/
+  /*----------------SEPARADOR----------------*/
+  /*----------------GRILLA CONTACTO----------------*/
+  .cajaContacto {
+    max-width: 750px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "form info";
+  }
+  .infoContacto {
+    padding: 1em;
+  }
+  /*----------------SEPARADOR----------------*/
+  /*----------------FOOTER SUPERIOR----------------*/
   .footerSup {
     display: flex;
     justify-items: center;
@@ -732,16 +732,6 @@ footer ul li {
     margin-left: 50px;
     margin-right: 50px;
   }
-  .footerInf {
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-  .tarjetaFooterTit {
-    font-size: 15px;
-  }
-  .tarjetaFooterDes {
-    font-size: small;
-  }
   .tarjetaFooter {
     height: 130px;
   }
@@ -749,24 +739,45 @@ footer ul li {
     height: 45px;
     width: 45px;
   }
-  /*FOOTER*/
+  /*----------------SEPARADOR----------------*/
+  /*----------------FOOTER SUPERIOR----------------*/
+  .footerInf {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  /*----------------SEPARADOR----------------*/
 }
+/*----------------SEPARADOR----------------*/
+/*----------------MEDIA PARA 1025----------------*/
 @media (min-width: 1280px) {
+  /*----------------TAMAÑO DE FUENTES----------------*/
+  .titGr {
+    font-size: 35px;
+    font-weight: bold;
+  }
+  .titCh {
+    font-size: 17px;
+  }
+  /*----------------SEPARADOR----------------*/
+  /*----------------HEADER INFERIOR----------------*/
   .linkNav {
     padding: 10px 10px;
     font-size: 25px;
     margin-left: 15px;
   }
+  /*----------------SEPARADOR----------------*/
+  /*----------------MAIN ESTILOS BASICOS----------------*/
   main {
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 200px;
+    margin-right: 200px;
   }
+  /*----------------SEPARADOR----------------*/
+  /*----------------CONTENEDOR CAROUSEL----------------*/
   .cajaCarousel {
     max-width: 1000px;
   }
-  .infoAdd {
-    width: 1000px;
-  }
+  /*----------------SEPARADOR----------------*/
 }
+/*----------------SEPARADOR----------------*/
 
 /*# sourceMappingURL=styless.css.map */

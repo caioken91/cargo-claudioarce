@@ -1,0 +1,187 @@
+/*----------------MAIN ESTILOS BASICOS----------------*/
+main{
+    margin-top:160px;
+    grid-area: main;
+    text-align: center;
+    align-items: center;
+    display: flexbox;
+    color: $rojoesp;
+}
+/*----------------SEPARADOR----------------*/
+
+/*----------------CONTENEDOR CAROUSEL----------------*/
+.cajaCarousel{
+    margin-bottom: 20px;
+}
+/*----------------SEPARADOR----------------*/
+
+/*----------------GRILLA MAIN SUPERIOR----------------*/
+.cajaGrilla{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+        grid-template-areas: 
+            "cajaA"
+            "cajaB"
+        ;
+    place-items: center;    
+}
+
+.cajaPpal{
+    grid-area: cajaA;
+    max-width: 360px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px 10px 0 0;
+    height: 100%;
+}
+
+.cajaPpal img{
+    border-radius:10px 10px 0 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cajaDesc{
+    grid-area: cajaB;
+    max-width: 360px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    border-radius: 0 0 10px 10px;
+    padding: 1em;
+}
+
+.botonNeo{
+    position: relative;
+    display: inline-block;
+    padding: 10px 15px;
+    color:$azulneonoscuro;
+    background: $azulneon;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 15px;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-left: 50px;
+    margin-top: 10px;
+    box-shadow: 0 0 10px $azulneon,0 0 40px $azulneon,0 0 80px $azulneon;
+    border-radius: 5px;
+}
+/*----------------SEPARADOR----------------*/
+
+/*----------------GRILLA CONTACTO----------------*/
+.cajaContacto{
+    border: solid 2px $rojoesp;
+    max-width: 350px;
+    display: grid;
+    grid-template-columns: 1fr;
+        grid-template-areas: 
+            "form"
+            "info"
+        ;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.contacForm{
+    grid-area: form;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menuFormulario{
+    padding: 1.5em 0.5em;
+    max-width: 300px;
+}
+
+.menuFormulario form p{
+    margin:0;
+    padding: 1em;
+}
+
+.inputForm{
+    max-width: 100%;
+    padding: 8px;
+    margin: 4px;
+}
+
+.infoContacto{
+    grid-area: info;
+    background:$azulesp;
+    text-align: left;
+    max-width: 300px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.infoContacto li{
+    list-style: none;
+}
+
+.miniIcon{
+    width: 20px;
+    height: 20px;
+}
+
+/*----------------SEPARADOR----------------*/
+
+/*----------------TARJETAS DE OPCIONES Y SUCURSALES----------------*/
+@mixin sizes ($width, $height){
+    width: $width;
+    height: $height;
+}
+
+.tarjetaOpc{
+    @include sizes(240px,260px);
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    margin: 15px;
+    padding: 5px;
+    box-shadow: 0 0 5px $verdeesp,0 0 10px $verdeesp,0 0 20px $verdeesp;
+}
+
+.tarjetaTit{
+    font-size: medium;
+    font-weight: bold;
+    text-align: center;
+    height: 50px;
+}
+
+.tarjetaImg{
+    width: 150px;
+    height: 100px;
+}
+
+.tarjetaDesc{
+    color: $verdeesp;
+    font-size: small;
+    text-align: center;
+    height: 50px;
+    border-top: solid 2px $verdeesp;
+}
+/*----------------SEPARADOR----------------*/
+
+/*----------------IMAGEN WHATSAPP----------------*/
+.imgWhatsapp{
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+}
+
+.imgWhatsapp img {
+    width: 50px;
+    height: 50px;
+}
+/*----------------SEPARADOR----------------*/

@@ -1,0 +1,53 @@
+
+/*----------------TAMAÑO DE FUENTES----------------*/
+.titGr{
+    font-size:25px;
+    font-weight: bold;
+}
+
+.descGr{
+    font-size: 15px;
+}
+
+.titCh{
+    font-size: small;
+}
+
+.descCh{
+    font-size: x-small;
+}
+/*----------------SEPARADOR----------------*/
+
+/*----------------COLOR DE FUENTES----------------*/
+.texVerde{
+    color: $verdeesp;
+}
+
+.texRojo{
+    color: $rojoesp;
+}
+
+.texBlanco{
+    color:$blancoesp;
+}
+
+.texAzulNeo{
+    color: $azulneon;
+}
+/*----------------SEPARADOR----------------*/
+
+/*----------------BORDES Y GLASS----------------*/
+.bordeVerde {
+    border: solid 2px $verdeesp;
+}
+
+.bordeBlanco{
+    border: solid 2px $blancoesp;
+}
+
+.glass{
+    background: linear-gradient(135deg, rgba(255,255,255,0.1),rgba(255,255,255,0));
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+}
+/*----------------SEPARADOR----------------*/

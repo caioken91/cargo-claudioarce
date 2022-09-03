@@ -1,0 +1,42 @@
+/*----------------FOOTER ESTILOS BASICOS----------------*/
+footer{
+    grid-area:footer;
+    background-color: $azulesp;
+    text-align: center;
+}
+/*----------------SEPARADOR----------------*/
+
+/*----------------FOOTER SUPERIOR----------------*/
+.footerSup{
+    border-top: solid 4px $rojoesp;
+    margin: auto;
+}
+
+.tarjetaFooter{
+    width: 250px;
+    height: 100px;
+    margin: auto;
+    text-align: left;
+    padding: 5px;
+}
+
+.imgFooter{
+    @extend .logo;
+    padding: 5px;
+}
+
+footer ul li{
+    list-style: none;
+    display: inline-block;
+}
+/*----------------SEPARADOR----------------*/
+
+/*----------------FOOTER INFERIOR----------------*/
+.footerInf{
+    margin: 25px;
+    border-top: solid 2px $rojoesp;
+    text-align: center;
+    padding: 5px;
+}
+/*----------------SEPARADOR----------------*/
+
